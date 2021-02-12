@@ -1,0 +1,55 @@
+---
+title: "Quiz 1"
+output: html_notebook
+---
+
+## loading the dataset:
+```{r}
+data <- read.table(unz("quiz1_data.zip", "hw1_data.csv"), header=TRUE, sep=",")
+```
+
+The names of the columns:
+```{r}
+colnames(data)
+```
+First two rows of the dataset:
+```{r}
+data[1:2, ]
+```
+Number of rows in the dataset:
+```{r}
+nrow(data)
+```
+last two rows of the data:
+```{r}
+tail(data, 2)
+````
+Value of `Ozone` in the 47th row:
+```{r}
+data[47, "Ozone"]
+```
+Number of missing values in `Ozone` column:
+```{r}
+sum(is.na(data$Ozone))
+```
+mean of `Ozone` column:
+```{r}
+mean(data$Ozone, na.rm=TRUE)
+```
+Extract the subset of rows of the data frame where Ozone values are above 31 and Temp values are above 90. What is the mean of Solar.R in this subset?
+```{r}
+sub_data <- data[data$Ozone > 31 & data$Temp > 90,]
+mean(sub_data$Solar.R, na.rm = TRUE)
+```
+What is the mean of "Temp" when "Month" is equal to 6? 
+```{r}
+sub_data <- data[data$Month == 6, ]
+mean(sub_data$Temp, na.rm = TRUE)
+```
+
+What was the maximum ozone value in the month of May (i.e. Month is equal to 5)?
+```{r}
+sub_data <- data[data$Month == 5, ]
+max(sub_data$Ozone, na.rm = TRUE)
+```
+
