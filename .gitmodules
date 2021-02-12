@@ -1,3 +1,6 @@
 [submodule "R-Programming/Week-3"]
 	path = R-Programming/Week-3
 	url = git@github.com:firekind/coursera-r-programming-assignment-2
+[submodule "Getting-and-Cleaning-Data/Week-4"]
+	path = Getting-and-Cleaning-Data/Week-4
+	url = git@github.com:firekind/coursera-getting-and-cleaning-data-assignment
